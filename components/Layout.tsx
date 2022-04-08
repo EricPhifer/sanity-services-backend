@@ -7,12 +7,10 @@ import {
 } from '@commercelayer/react-components'
 import ShoppingBag from './ShoppingBag'
 import LayoutContext from '@context/LayoutContext'
-import LanguageSelector from './LanguageSelector'
-import CountrySelector from './CountrySelector'
 import { Country } from '@typings/models'
 import { Transition } from '@headlessui/react'
-import Link from 'next/link'
 import locale from '@locale/index'
+import logo from '../public/logo.png';
 
 const getCmsHref = (cms: 'contentful' | 'dato' | string) => {
   switch (cms) {
@@ -84,16 +82,15 @@ const Layout: React.FunctionComponent<Props> = ({
             >
               <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                 <div className="flex items-center justify-between w-full md:w-auto">
-                  <Link href="/" passHref>
+                  <a href="https://ericphifer.com" rel="noreferrer">
                     <a>
-                      <span className="sr-only">Commercelayer</span>
                       <img
                         className="h-8 w-auto"
-                        src="//data.commercelayer.app/assets/logos/full-logo/black/commercelayer_full_logo_black.svg"
-                        alt=""
+                        src="../public/logo.png"
+                        alt="Logo"
                       />
                     </a>
-                  </Link>
+                  </a>
                   {showMenu && (
                     <div className="-mr-2 flex items-center md:hidden">
                       <button
@@ -189,10 +186,6 @@ const Layout: React.FunctionComponent<Props> = ({
                   aria-orientation="vertical"
                   aria-labelledby="main-menu"
                 >
-                  <div className="px-2 pt-5 pb-2" role="none">
-                    {showMenu && <CountrySelector options={countries} />}
-                    {showMenu && <LanguageSelector options={buildLanguages} />}
-                  </div>
                   <div className="px-3 pt-2 pb-20" role="none">
                     {showMenu && (
                       <a href="#" onClick={handleAnimation}>

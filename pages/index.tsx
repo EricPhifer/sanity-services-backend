@@ -16,11 +16,8 @@ type Props = {
 const IndexPage = (props: Props) => {
   const { cms, searchEngine, countries } = props
   return (
-    <Layout title="Commerce Layer Starter" showMenu={false} cms={cms}>
-      <div className="pb-10 px-5 md:px-0 max-w-screen-lg mx-auto container">
-        <Countries items={countries} cms={cms} searchBy={searchEngine} />
-      </div>
-    </Layout>
+    <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms} /
+ 
   )
 }
 
