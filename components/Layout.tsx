@@ -8,6 +8,8 @@ import {
 import ShoppingBag from './ShoppingBag'
 import LayoutContext from '@context/LayoutContext'
 import LanguageSelector from './LanguageSelector'
+import CountrySelector from './CountrySelector'
+import { Country } from '@typings/models'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import locale from '@locale/index'
@@ -28,6 +30,8 @@ type Props = {
   socialIcons?: SocialIcon[]
   showMenu?: boolean
   lang?: string
+  buildLanguages?: Country[]
+  countries?: Country[]
   cms: string
 }
 
@@ -36,6 +40,8 @@ const Layout: React.FunctionComponent<Props> = ({
   title = 'This is the default title',
   showMenu = true,
   lang = 'en-us',
+  buildLanguages = [],
+  countries = [],
   cms,
 }) => {
   const [animation, setAnimation] = useState(false)
@@ -183,6 +189,10 @@ const Layout: React.FunctionComponent<Props> = ({
                   aria-orientation="vertical"
                   aria-labelledby="main-menu"
                 >
+                  <div className="px-2 pt-5 pb-2" role="none">
+                    {showMenu && <CountrySelector options={countries} />}
+                    {showMenu && <LanguageSelector options={buildLanguages} />}
+                  </div>
                   <div className="px-3 pt-2 pb-20" role="none">
                     {showMenu && (
                       <a href="#" onClick={handleAnimation}>

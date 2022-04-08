@@ -1,7 +1,7 @@
 {
-  "name": "services-epllc",
+  "name": "sanity-template-commercelayer",
   "version": "1.0.1",
-  "description": "An app to track and display services offered by Eric Phifer LLC",
+  "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "engines": {
     "node": ">=16",
     "npm": ">=7.0.0"
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EricPhifer/sanity-services-backend"
+    "url": "git+https://github.com/commercelayer/sanity-template-commercelayer.git"
   },
   "release": {
     "branches": [
@@ -33,8 +33,8 @@
       }
     ],
     "author": {
-      "name": "Eric Phifer",
-      "email": "eric@ericphiferllc.com"
+      "name": "Bolaji Ayodeji",
+      "email": "bolaji@commercelayer.io"
     },
     "license": "MIT",
     "bugs": {
@@ -49,16 +49,7 @@
       "jamstack",
       "headless",
       "ecommerce",
-      "api",
-      "services",
-      "eric",
-      "phifer",
-      "web",
-      "development",
-      "design",
-      "seo",
-      "website",
-      "fast"
+      "api"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",

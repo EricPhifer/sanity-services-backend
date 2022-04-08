@@ -1,4 +1,5 @@
 import Layout from '@components/Layout'
+import Countries from '@components/Countries'
 import { cmsList } from '@utils/cms'
 import _ from 'lodash'
 import { searchEngineList } from '@utils/search'
@@ -13,10 +14,11 @@ type Props = {
 }
 
 const IndexPage = (props: Props) => {
-  const { cms } = props
+  const { cms, searchEngine, countries } = props
   return (
     <Layout title="Commerce Layer Starter" showMenu={false} cms={cms}>
       <div className="pb-10 px-5 md:px-0 max-w-screen-lg mx-auto container">
+        <Countries items={countries} cms={cms} searchBy={searchEngine} />
       </div>
     </Layout>
   )

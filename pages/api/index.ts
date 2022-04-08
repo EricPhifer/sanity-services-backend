@@ -19,13 +19,19 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
           size: _.first(item.size),
             name: {
               en_us: item.name,
+              it_it: item.name,
             },
             label: {
               en_us: item.label,
+              it_it: item.label,
             },
             slug: {
               _type: 'localeSlug',
               en_us: {
+                _type: 'slug',
+                current: item.name.toLowerCase().replaceAll(' ', '-'),
+              },
+              it_it: {
                 _type: 'slug',
                 current: item.name.toLowerCase().replaceAll(' ', '-'),
               },
