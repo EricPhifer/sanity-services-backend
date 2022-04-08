@@ -124,10 +124,6 @@ const Layout: React.FunctionComponent<Props> = ({
                   )}
                 </div>
               </div>
-              <div className="hidden md:absolute md:inset-y-0 md:right-40 md:flex md:items-center md:justify-end md:space-x-5">
-                {showMenu && <CountrySelector options={countries} />}
-                {showMenu && <LanguageSelector options={buildLanguages} />}
-              </div>
               <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
                 {showMenu && (
                   <a href="#" onClick={handleAnimation}>
