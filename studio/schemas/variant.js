@@ -13,7 +13,7 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'localeString',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
@@ -25,7 +25,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'localeText',
+      type: 'text',
     },
     {
       name: 'images',
