@@ -37,8 +37,6 @@ const Layout: React.FunctionComponent<Props> = ({
   title = 'This is the default title',
   showMenu = true,
   lang = 'en-us',
-  buildLanguages = [],
-  countries = [],
   cms,
 }) => {
   const [animation, setAnimation] = useState(false)
