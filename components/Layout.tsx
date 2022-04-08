@@ -10,7 +10,6 @@ import LayoutContext from '@context/LayoutContext'
 import { Country } from '@typings/models'
 import { Transition } from '@headlessui/react'
 import locale from '@locale/index'
-import logo from '../public/logo.png';
 
 const getCmsHref = (cms: 'contentful' | 'dato' | string) => {
   switch (cms) {
