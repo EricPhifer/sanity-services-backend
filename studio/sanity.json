@@ -1,10 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "Commerce Layer Starter",
+    "name": "Eric Phifer LLC - Services",
     "basePath": "/"
   },
   "api": {
+    "projectTitle": "epllc-services",
     "projectId": "dozj6pn1",
     "dataset": "production"
   },
