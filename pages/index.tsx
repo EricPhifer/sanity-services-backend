@@ -1,5 +1,4 @@
 import Layout from '@components/Layout'
-import Countries from '@components/Countries'
 import { cmsList } from '@utils/cms'
 import _ from 'lodash'
 import { searchEngineList } from '@utils/search'
@@ -14,7 +13,7 @@ type Props = {
 }
 
 const IndexPage = (props: Props) => {
-  const { cms, searchEngine, countries } = props
+  const { cms } = props
   return (
     <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms} />
  
