@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "title": "Commerce Layer Starter",
-  "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
+  "title": "Eric Phifer LLC - Services",
+  "description": "An app to track and display services offered by Eric Phifer LLC",
   "previewMedia": {
     "type": "image",
     "src": ".sanity-template/assets/preview.jpg",
@@ -30,8 +30,8 @@
       {
         "id": "studio",
         "type": "studio",
-        "title": "Commerce Layer Starter Studio",
-        "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
+        "title": "Eric Phifer LLC Services Studio",
+        "description": "An app to track and display services offered by Eric Phifer LLC",
         "dir": "./studio",
         "previewMedia": {
           "type": "image",
@@ -47,8 +47,8 @@
       {
         "id": "web",
         "type": "web",
-        "title": "Commerce Layer Starter Web",
-        "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
+        "title": "Eric Phifer LLC - Services",
+        "description": "An app to track and display services offered by Eric Phifer LLC",
         "dir": "./web",
         "previewMedia": {
           "type": "image",
