@@ -4,8 +4,9 @@
 @tailwind variants;
 
 body {
-  font-family: 'Eina01', 'sans-serif';
+  font-family: "Eina01", "sans-serif";
   height: 100vh;
+  background-color: #2e2e2e;
   @apply bg-gray-50;
 }
 
