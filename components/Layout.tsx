@@ -1,28 +1,11 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { SocialIcon } from './SocialIcons'
-import {
-  LineItemsContainer,
-  LineItemsCount,
-} from '@commercelayer/react-components'
-import ShoppingBag from './ShoppingBag'
+ 
 import LayoutContext from '@context/LayoutContext'
 import { Country } from '@typings/models'
-import { Transition } from '@headlessui/react'
-import locale from '@locale/index'
 import Navbar from './Navbar'
 import Footer from './Footer'
-
-const getCmsHref = (cms: 'contentful' | 'dato' | string) => {
-  switch (cms) {
-    case 'contentful':
-      return '//contentful.com'
-    case 'dato':
-      return '//datocms.com'
-    default:
-      return '#'
-  }
-}
 
 type Props = {
   title?: string
@@ -36,18 +19,13 @@ type Props = {
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = 'This is the default title',
-  cms,
+  title = 'Eric Phifer LLC - Services',
 }) => {
   const [animation, setAnimation] = useState(false)
   const handleAnimation = (event: React.MouseEvent) => {
     event.preventDefault()
     setAnimation(!animation)
   }
-  const cmsHref = getCmsHref(cms)
-  const opacity = animation
-    ? 'opacity-25 transition ease-in duration-300'
-    : 'transition ease-in duration-300'
   return (
     <LayoutContext.Provider value={{ handleAnimation }}>
       <Head>
