@@ -1,16 +1,9 @@
-import LayoutContext from "@context/LayoutContext"
 import Link from "next/link"
-import { useState } from "react"
-import ShoppingBag from "./ShoppingBag"
+
 
 const Navbar = () => {
-  const [animation, setAnimation] = useState(false)
-  const handleAnimation = (event: React.MouseEvent) => {
-    event.preventDefault()
-    setAnimation(!animation)
-  }
   return (
-    <LayoutContext.Provider value={{ handleAnimation }}>
+    <div>
       <div className="hidden md:flex justify-between ml-6 mr-6 mt-4 text-white">
         <a href="https://ericphifer.com" rel="noreferrer">
           <img
@@ -42,10 +35,6 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-        <ShoppingBag
-          active={animation}
-          handleAnimation={handleAnimation}
-        />
       </div>
       <div className="grid grid-cols-2 fixed z-20 w-screen top-0 h-16 bg-black justify-evenly md:hidden">
         <div>
@@ -103,13 +92,10 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <ShoppingBag
-          active={animation}
-          handleAnimation={handleAnimation}
-        />
       </div>
-    </LayoutContext.Provider>
+    </div>
   )
 }
+
 
 export default Navbar

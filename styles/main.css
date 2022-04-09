@@ -7,7 +7,6 @@ body {
   font-family: "Eina01", "sans-serif";
   height: 100vh;
   background-color: #2e2e2e;
-  @apply bg-gray-50;
 }
 
 h1,
@@ -25,4 +24,65 @@ h5 {
 
 section.content {
   min-height: calc(100vh - 20vh);
+}
+
+.menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 20;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.menuToggleInput {
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 30;
+}
+.menuToggleInput:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-3px, -1px);
+  background: #36383f;
+}
+.menuToggleInput:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+.menuToggleInput:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+.menuToggleInput:checked ~ ul {
+  transform: none;
+}
+.menuToggleSpan {
+  position: relative;
+  width: 29px;
+  height: 2px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  z-index: 20;
+  transform-origin: 5px 0;
+  background: #fff;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+.menuToggleSpan:first-child {
+  transform-origin: 0% 0%;
+}
+.menuToggleSpan:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+.mobileMenu {
+  top: 0;
+  left: 0;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
