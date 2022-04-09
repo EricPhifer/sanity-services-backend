@@ -1,3 +1,4 @@
+import LayoutContext from "@context/LayoutContext"
 import Link from "next/link"
 import { useState } from "react"
 import ShoppingBag from "./ShoppingBag"
@@ -9,7 +10,7 @@ const Navbar = () => {
     setAnimation(!animation)
   }
   return (
-    <div>
+    <LayoutContext.Provider value={{ handleAnimation }}>
       <div className="hidden md:flex justify-between ml-6 mr-6 mt-4 text-white">
         <a href="https://ericphifer.com" rel="noreferrer">
           <img
@@ -107,7 +108,7 @@ const Navbar = () => {
           handleAnimation={handleAnimation}
         />
       </div>
-    </div>
+    </LayoutContext.Provider>
   )
 }
 

@@ -15,7 +15,9 @@ type Props = {
 const IndexPage = (props: Props) => {
   const { cms } = props
   return (
-    <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms} />
+    <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms}>
+      
+    </Layout>
  
   )
 }
