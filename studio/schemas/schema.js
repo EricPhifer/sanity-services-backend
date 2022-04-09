@@ -12,7 +12,7 @@ import catalog from './catalog'
 import blockContent from './blockContent'
 
 import productImage from './productImage'
-import localeString from './locale/localeString'
+import localeString from './locale/String'
 import localeText from './locale/Text'
 import localeSlug from './locale/Slug'
 import localeBlockContent from './locale/BlockContent'
