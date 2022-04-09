@@ -8,7 +8,7 @@ import variant from './variant'
 import size from './size'
 import taxon from './taxon'
 import taxonomy from './taxonomy'
-import bundles from './bundles'
+import catalog from './catalog'
 import blockContent from './blockContent'
 
 import productImage from './productImage'
@@ -32,7 +32,7 @@ export default createSchema({
     size,
     taxon,
     taxonomy,
-    bundles,
+    catalog,
     // When added to this list, object types can be used as
     // { type: "typename" } in other document schemas
     productImage,

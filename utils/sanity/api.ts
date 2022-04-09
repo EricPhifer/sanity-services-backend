@@ -26,6 +26,9 @@ const sanityAllCountries = async (locale = 'en-US') => {
     "image": {
       "url": image.asset->url
     },
+    'catalog': {
+      'id': catalog->_id
+    }
   } | order(name["${lang}"] asc)`
   const countries = await client.fetch<SanityCountry[]>(query)
   return countries.map((country) => {

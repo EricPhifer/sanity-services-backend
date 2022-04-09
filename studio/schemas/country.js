@@ -23,6 +23,17 @@ export default {
       validation: (rule) => rule.required().min(2).max(4),
     },
     {
+      name: 'catalog',
+      title: 'Catalog',
+      type: 'reference',
+      to: [
+        {
+          type: 'catalog',
+        },
+      ],
+      validation: (rule) => rule.required(),
+    },
+    {
       name: 'marketId',
       title: 'Market Id',
       type: 'string',
