@@ -4,8 +4,8 @@ import supportedLanguages from './locale/supportedLanguages'
 const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
-  name: 'catalog',
-  title: 'Catalog',
+  name: 'bundles ',
+  title: 'Bundles',
   description: '',
   type: 'document',
   icon: GoFileSubmodule,

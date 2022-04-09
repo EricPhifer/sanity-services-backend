@@ -3,10 +3,13 @@
 @tailwind utilities;
 @tailwind variants;
 
+html {
+  background-color: #2e2e2e;
+}
+
 body {
   font-family: "Eina01", "sans-serif";
   height: 100vh;
-  background-color: #2e2e2e;
 }
 
 h1,
