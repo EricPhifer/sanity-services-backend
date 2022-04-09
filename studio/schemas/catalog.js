@@ -13,7 +13,7 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'localeString',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
