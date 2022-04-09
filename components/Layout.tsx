@@ -11,6 +11,7 @@ import { Country } from '@typings/models'
 import { Transition } from '@headlessui/react'
 import locale from '@locale/index'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 const getCmsHref = (cms: 'contentful' | 'dato' | string) => {
   switch (cms) {
@@ -70,44 +71,7 @@ const Layout: React.FunctionComponent<Props> = ({
       </Head>
       <Navbar />
       <main>{children}</main>
-      
-        <footer className={`mt-12 border-t border-gray-200 py-8 ${opacity}`}>
-          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-gray-400 text-center">
-            Powered by{' '}
-            <a
-              className="underline hover:text-blue-500"
-              href="//commercelayer.io"
-              target="_blank"
-            >
-              Commerce Layer
-            </a>
-            ,{' '}
-            <a
-              href={cmsHref}
-              target="_blank"
-              className="capitalize underline hover:text-blue-500"
-            >
-              {cms}
-            </a>
-            , and{' '}
-            <a
-              className="underline hover:text-blue-500"
-              href="//nextjs.org"
-              target="_blank"
-            >
-              Next.js
-            </a>{' '}
-            on{' '}
-            <a
-              className="underline hover:text-blue-500"
-              href="//netlify.com"
-              target="_blank"
-            >
-              Netlify.
-            </a>
-          </p>
-        </footer>
-      </div>
+      <Footer />
     </LayoutContext.Provider>
   )
 }
