@@ -55,7 +55,6 @@ const Layout: React.FunctionComponent<Props> = ({
           key="Commerce Layer Style"
         /> */}
       </Head>
-      <div className="relative bg-gray-50 overflow-hidden ">
         <div className="relative pt-5 pb-10 px-5 lg:px-0 lg:pb-16 max-w-screen-lg mx-auto">
           <div className="max-w-7xl mx-auto">
             <Navbar />
@@ -133,7 +132,6 @@ const Layout: React.FunctionComponent<Props> = ({
         />
         <main>{children}</main>
         <Footer />
-      </div>
     </LayoutContext.Provider>
   )
 }
