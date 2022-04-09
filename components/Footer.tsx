@@ -1,5 +1,3 @@
-import NextImage from "./Image"
-
 const Footer = () => {
   return (
     <div className="flex mx-auto my-6 text-xs text-white flex-col-reverse items-center text-center">
