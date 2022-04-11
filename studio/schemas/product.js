@@ -28,9 +28,14 @@ export default {
       validation: (rule) => rule.required(),
     },
     {
-      name: 'reference',
-      title: 'Reference',
-      type: 'string',
+      name: 'categories',
+      title: 'Categores',
+      type: 'reference',
+      to: [
+        {
+          type: 'categories',
+        },
+      ],
       validation: (rule) => rule.required(),
     },
     {
@@ -59,7 +64,6 @@ export default {
           },
         },
       ],
-      validation: (rule) => rule.required(),
     },
   ],
 

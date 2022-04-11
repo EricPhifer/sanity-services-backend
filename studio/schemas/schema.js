@@ -16,6 +16,7 @@ import localeString from './locale/String'
 import localeText from './locale/Text'
 import localeSlug from './locale/Slug'
 import localeBlockContent from './locale/BlockContent'
+import categories from './categories'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,6 +34,7 @@ export default createSchema({
     taxon,
     taxonomy,
     catalog,
+    categories,
     // When added to this list, object types can be used as
     // { type: "typename" } in other document schemas
     productImage,
