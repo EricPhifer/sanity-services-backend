@@ -1,46 +1,57 @@
-import sanityClient from '@sanity/client'
+import Layout from '@components/Layout'
+import { cmsList } from '@utils/cms'
 import _ from 'lodash'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { searchEngineList } from '@utils/search'
+import { cmsFunctions } from '@utils/cms'
+import { GetStaticProps } from 'next'
+import ProductsList from '@components/ProductsList'
+import { useEffect, useState } from 'react'
 
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
-  const client = sanityClient({
-    projectId: process.env.SANITY_PROJECT_ID as string,
-    dataset: process.env.SANITY_DATASET as string,
-    token: process.env.SANITY_TOKEN as string, // or leave blank to be anonymous user
-    useCdn: false, // `false` if you want to ensure fresh data
-  })
-  const query = `*[_type == "variant"]`
-  const items = await client.fetch<any[]>(query)
-  const update = await Promise.all(
-    items.map((item) => {
-      return client
-        .patch(item._id)
-        .set({
-          size: _.first(item.size),
-          //   name: {
-          //     en_us: item.name,
-          //     it_it: item.name,
-          //   },
-          //   // label: {
-          //   //   en_us: item.label,
-          //   //   it_it: item.label,
-          //   // },
-          //   // slug: {
-          //   //   _type: 'localeSlug',
-          //   //   en_us: {
-          //   //     _type: 'slug',
-          //   //     current: item.name.toLowerCase().replaceAll(' ', '-'),
-          //   //   },
-          //   //   it_it: {
-          //   //     _type: 'slug',
-          //   //     current: item.name.toLowerCase().replaceAll(' ', '-'),
-          //   //   },
-          //   // },
-        })
-        .commit()
-    })
-  )
-  return res.json({
-    items: update,
-  })
+type Props = {
+  [key: string]: any
+  countries: any[]
+  cms: 'sanity'
+  searchEngine?: 'algolia'
+  activeAlgolia: () => void
+  algoliaStatus: boolean
+  lang?: string
 }
+
+const IndexPage = ( {taxonomies, activeAlgolia, algoliaStatus, searchEngine, props }: Props) => {
+  const { cms } = props
+  const [on, setOn] = useState<Record<string, number>>({ '0': 0 })
+  const [currentProducts, setCurrentProducts] = useState([])
+  useEffect(() => {
+    if (!_.isEmpty(taxonomies)) {
+      _.map(on, (v, k: number) => {
+        setCurrentProducts(taxonomies[k].taxons[v].products || [])
+      })
+    }
+  }, [on, taxonomies])
+  return (
+    <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms}>
+      <div className="pb-10 px-5 md:px-0 max-x-screen-lg mx-auto container">
+        <ProductsList products={currentProducts} cms={cms} searchBy={searchEngine} />
+      </div>
+    </Layout>
+ 
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const cms = cmsList()
+  const searchEngine = searchEngineList()
+  const countries = _.has(cmsFunctions, `${cms}AllCountries`)
+    ? await cmsFunctions[`${cms}AllCountries`]()
+    : []
+  return {
+    props: {
+      countries,
+      cms,
+      searchEngine,
+    },
+    revalidate: false,
+  }
+}
+
+export default IndexPage

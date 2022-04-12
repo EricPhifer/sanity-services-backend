@@ -35,7 +35,7 @@ export default {
     },
     {
       name: 'categories',
-      title: 'Categores',
+      title: 'Categories',
       type: 'reference',
       to: [
         {
