@@ -6,7 +6,7 @@ const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 export default {
   name: 'categories',
   title: 'Categories',
-  description: 'Categories of services provided.',
+  description: 'Categories of services provided',
   type: 'document',
   icon: BiCategory,
   fields: [

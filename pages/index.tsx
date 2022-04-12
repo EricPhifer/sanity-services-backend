@@ -1,40 +1,26 @@
 import Layout from '@components/Layout'
+import Countries from '@components/Countries'
 import { cmsList } from '@utils/cms'
 import _ from 'lodash'
 import { searchEngineList } from '@utils/search'
 import { cmsFunctions } from '@utils/cms'
 import { GetStaticProps } from 'next'
-import ProductsList from '@components/ProductsList'
-import { useEffect, useState } from 'react'
 
 type Props = {
   [key: string]: any
   countries: any[]
   cms: 'sanity'
   searchEngine?: 'algolia'
-  activeAlgolia: () => void
-  algoliaStatus: boolean
-  lang?: string
 }
 
-const IndexPage = ( {taxonomies, activeAlgolia, algoliaStatus, searchEngine, props }: Props) => {
-  const { cms } = props
-  const [on, setOn] = useState<Record<string, number>>({ '0': 0 })
-  const [currentProducts, setCurrentProducts] = useState([])
-  useEffect(() => {
-    if (!_.isEmpty(taxonomies)) {
-      _.map(on, (v, k: number) => {
-        setCurrentProducts(taxonomies[k].taxons[v].products || [])
-      })
-    }
-  }, [on, taxonomies])
+const IndexPage = (props: Props) => {
+  const { cms, searchEngine, countries } = props
   return (
     <Layout title="Eric Phifer LLC - Services" showMenu={false} cms={cms}>
-      <div className="pb-10 px-5 md:px-0 max-x-screen-lg mx-auto container">
-        <ProductsList products={currentProducts} cms={cms} searchBy={searchEngine} />
+      <div className="pb-10 px-5 md:px-0 max-w-screen-lg mx-auto container">
+        <Countries items={countries} cms={cms} searchBy={searchEngine} />
       </div>
     </Layout>
- 
   )
 }
 
